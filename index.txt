@@ -1,0 +1,18 @@
+owb_execs						Find the execution history of a specific node (leaf node or subflow) and remaining time until the end of main flow or other node
+sqltune_exec				Tune a specific sql_id by creating a tuning task and calling DBMS_SQLTUNE.EXECUTE_TUNING_TASK
+						    		(Note: you must login to the same instance as the one running the sql_id because the script assumes the sql_id is loaded in the library cache)
+sqltune_report			Report of the results of a sql tuning task (including recommendations with respective sql statements)						    		
+fs_awr							Find SQL in DBA_HIST_SQLSTAT
+xplan_awr_all				Display the execution plan (display option ALL) for a specific cursor (sql_id and child number) as well as 
+								    hash_plan_value  from AWR. (dbms_xplan.display_awr format option 'ADVANCED ALLSTATS LAST')
+xplan_rac						Display the execution plan for a specific cursor (sql_id and child number).
+									  You dont have to explicitly log in to a specific instance (in a RAC), to find the execution plan in the library cache of a node. It uses 
+									  gv$sql_plan_statistics_all as a plan_table input to DBMS_XPLAN.DISPLAY in order to get the execution plan in loaded in the library cache of any RAC instance.
+									  (format parameter: 'ALL ALLSTATS LAST -PROJECTION')
+xplan_rac_all				Display the execution plan (display option ADVANCED) for a specific cursor (sql_id and child number) or the last statement for this session from library cache
+									  You dont have to explicitly log in to a specific instance (in a RAC), to find the execution plan in the library cache of a node. It uses 
+									  gv$sql_plan_statistics_all as a plan_table input to DBMS_XPLAN.DISPLAY in order to get the execution plan in loaded in the library cache of any RAC instance.									
+									  (format parameter: 'ADVANCED ALLSTATS LAST')
+rollback_t					Estimate how much time is remaining for all sessions of a sql_id to rollback (You can use it for a specific session too)									  
+								    
+								
